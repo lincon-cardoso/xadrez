@@ -147,5 +147,54 @@ reiPreto.style.textAlign = 'center';
 reiPreto.innerHTML = '&#9812; ';
 
 
+// for (const quadrado of quadrados) {
+//   quadrado.addEventListener('click', (event) => {
+//     console.log(event.target);
+//   });
+// }
 
 //Criar movimentação
+
+// console.log(event.target.textContent);
+const quadrados = document.querySelectorAll('.quadrado');
+
+
+for (const quadrado of quadrados) {
+  quadrado.addEventListener('click', (event) => {
+
+    const idLocal = event.target.id;
+    const peca = event.target.textContent;
+    console.log(peca,idLocal);
+    
+  });
+}
+
+
+// function criaPeca(idPeca,elemento) {
+
+//   let novaPeca = elemento.cloneNode();
+//   novaPeca.id = idPeca;
+//   // Adiciona a nova peça ao outro ponto clicado
+//   outroPontoClicado.appendChild(novaPeca);
+// }
+
+// criaPeca(idPeca)
+
+// console.log(idPeca)
+// vazio(idPeca);
+// function vazio(idPeca) {
+  //   if (idPeca === '') {
+    //     console.log("nao tem peça");
+    //   } else {
+      //     console.log("tem peça");
+      //   }
+      // }
+      
+      // let = novaPeca = document.createElement('div');
+      // novaPeca.className = 'quadrado';
+      // novaPeca.id = idPeca.id;
+      // novaPeca.appendChild(document.querySelector(idPeca));
+      // let quadrado = document.createElement('div');
+      // quadrado.className = 'quadrado';
+      // quadrado.id = 'quadrado-' + i + '-' + j; // adiciona o atributo id ao elemento
+      // tabuleiroDOM.appendChild(quadrado);
