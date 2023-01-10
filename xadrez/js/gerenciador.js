@@ -158,16 +158,56 @@ reiPreto.innerHTML = '&#9812; ';
 // console.log(event.target.textContent);
 const quadrados = document.querySelectorAll('.quadrado');
 
+// Define the cordenadas variable outside the event listener
 
 for (const quadrado of quadrados) {
   quadrado.addEventListener('click', (event) => {
+    let cordenadas = cordenadaMapa(event);
 
-    const idLocal = event.target.id;
-    const peca = event.target.textContent;
-    console.log(peca,idLocal);
+    cordenadaMapa(event);
+    movePeca();
+    // console.log(cordenadas.id, cordenadas.peca);
+
+
+
+
     
   });
 }
+
+
+function movePeca() {
+  const cordenadas = JSON.parse(localStorage.getItem('key'));
+  
+  let peca = cordenadas.peca;
+  let id = cordenadas.id;
+ 
+  const div = document.createElement('div')
+ 
+  console.log(div)
+}
+
+
+
+function cordenadaMapa(event) {
+  const idLocal = event.target.id;
+  const peca = event.target.textContent;
+
+  const cordenadas = {
+    id: idLocal,
+    peca: peca
+  };
+
+  localStorage.setItem('key', JSON.stringify(cordenadas));
+  return cordenadas;
+}
+
+// function setPosicaoPeca(cordenadas) {
+//   localStorage.setItem("id", cordenadas.idLocal);
+//   localStorage.setItem("peca", cordenadas.peca);
+
+//   return setPosicaoPeca;
+// }
 
 
 // function criaPeca(idPeca,elemento) {
