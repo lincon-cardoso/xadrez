@@ -157,6 +157,7 @@ for (const quadrado of quadrados) {
   });
 }
 
+//move peça de lugar 
 function movePeca() {
   let cordenadas = JSON.parse(localStorage.getItem('key'));
   if (!cordenadas) return;
@@ -178,6 +179,7 @@ function movePeca() {
 
 
 
+//captura click do movimento 
 function cordenadaMapa(event) {
   const idLocal = event.target.id;
   const peca = event.target.textContent;
